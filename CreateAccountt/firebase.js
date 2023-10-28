@@ -1,5 +1,4 @@
 
-// Configure o Firebase com suas credenciais
 const firebaseConfig = {
   apiKey: "AIzaSyBWByiUM_U7xTQapDt5LWINXK5dAg6am6E",
   authDomain: "hybrid-text-138707.firebaseapp.com",
@@ -10,15 +9,14 @@ const firebaseConfig = {
   appId: "1:104703038657:web:1600a8186467fb5fcbf040",
   measurementId: "G-XQ0VE0HD6P"
   };
-  // Inicialize o Firebase
-  firebase.initializeApp(firebaseConfig);
-  
-  // Referência ao banco de dados Firebase
-  const database = firebase.database();
-  
-  let id = 1
   
 
+  firebase.initializeApp(firebaseConfig);
+  
+ 
+  const database = firebase.database();
+  
+  
 
   document.getElementById("form").addEventListener("submit", function(event) {
       event.preventDefault();
@@ -32,9 +30,8 @@ const firebaseConfig = {
 
   
   
-  // Escreva dados no banco de dados
+  // inserir no db push cria nos e nao substitui, .set substitui
   database.ref('usuarios').push({
-    id: id++,
     nome: nome,
     cpf: cpf,
     username: username,
@@ -44,6 +41,6 @@ const firebaseConfig = {
   
   });
 
-  
-  
+
+ 
   
